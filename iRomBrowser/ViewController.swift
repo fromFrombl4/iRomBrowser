@@ -24,16 +24,16 @@ class ViewController: UIViewController, WKUIDelegate {
     
 //    var isLoading: Bool = false
     var webView: WKWebView!
-    var url: String = "https://www.instagram.com/roma_dod.io"
+    var url: String = "https://www.tut.by"
     
     
-    override func loadView() {
+//    override func loadView() {
 //        let webConfiguration = WKWebViewConfiguration()
 //        webView = WKWebView(frame: wkWebViewOutlet.frame, configuration: webConfiguration)
 //        webView.uiDelegate = self
 //        wkWebViewOutlet = webView
 //        wkWebViewOutlet.addSubview(webView)
-    }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +71,7 @@ class ViewController: UIViewController, WKUIDelegate {
     }
     
     @IBAction func pressedAddButton(_ sender: UIButton) {
-        
+//        self.navigationController!.pushViewController(WebPageViewController(nibName: "WebPageViewController", bundle: nil), animated: true)
     }
     
     @IBAction func pressedForwardButton(_ sender: UIButton) {
@@ -81,6 +81,10 @@ class ViewController: UIViewController, WKUIDelegate {
     }
     
     @IBAction func pressedGoButton(_ sender: UIButton) {
+        var query = textField.text
+        query = query!.replacingOccurrences(of: " ", with: "+")
+        let url = "https://www.google.co.in/search?q=" + query!
+        
         
         let myURL = URL(string: url)
         let myRequest = URLRequest(url: myURL!)
